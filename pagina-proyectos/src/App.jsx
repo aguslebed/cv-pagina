@@ -70,6 +70,12 @@ function App() {
             tecnologies={["Python", "OpenCV", "MediaPipe", "Numpy"]}
             image={"AlfabetoDactologico.png"}
           />
+          <ProjectCard title={"Sudoku"}
+            description={""}
+            link={"https://github.com/aguslebed/Sudoku"}
+            tecnologies={["Python", "FastAPI", "JavaScript", "HTML", "Tailwindcss"]}
+            image={"Sudoku.png"}
+          />
         </section>
       </div>
     </div>

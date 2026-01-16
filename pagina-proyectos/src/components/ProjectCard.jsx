@@ -18,7 +18,9 @@ export default function ProjectCard({ title, description, image, link, tecnologi
         "Vite": "/tecnologies/Vite.svg",
         "MediaPipe": "/tecnologies/Mediapipe.png",
         "Numpy": "/tecnologies/Numpy.png",
-
+        "JavaScript": "/tecnologies/Javascript.png",
+        "HTML": "/tecnologies/HTML5.png",
+        "FastAPI": "/tecnologies/Fastapi.png"
     }
 
     return (
