@@ -26,18 +26,32 @@ export default function ProjectCard({ title, description, image, link, tecnologi
 
 
     return (
-        <div className="flex flex-col gap-4 hover:bg-gray-800 rounded-lg p-4 
-        shadow-md hover:shadow-lg hover:cursor-pointer hover:scale-105 hover:shadow-gray-400 
-        origin-left transition-all" onClick={() => window.open(link, '_blank')}>
-            <h3 className="text-2xl">{title}</h3>
-            <div className="flex gap-4">
-                <img src={`${BASE_URL}${image}`} alt={title} className="w-72 h-56 rounded-xl" />
-                <p>{description}</p>
-
+        <div className="group flex flex-col gap-4 bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 
+        shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 hover:bg-slate-800/60 
+        cursor-pointer transition-all duration-300 border border-slate-700/50 hover:border-cyan-500/50"
+            onClick={() => window.open(link, '_blank')}>
+            <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
+            <div className="flex gap-6">
+                <div className="shrink-0">
+                    <img
+                        src={`${BASE_URL}${image}`}
+                        alt={title}
+                        className="w-64 h-48 rounded-lg object-cover shadow-md border border-slate-600/50"
+                    />
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed flex-1">{description}</p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
                 {tecnologies.map((tecnology) => (
-                    <span key={tecnology} className="bg-blue-600 px-2 text-white rounded flex items-center gap-2"><img src={icons[tecnology]} className="w-4 h-4" alt="" />{tecnology}</span>
+                    <span
+                        key={tecnology}
+                        className="bg-slate-700/60 px-3 py-1.5 text-xs text-gray-200 rounded-full 
+                        flex items-center gap-2 border border-slate-600/50 hover:border-cyan-500/50 
+                        transition-colors"
+                    >
+                        <img src={icons[tecnology]} className="w-4 h-4" alt="" />
+                        {tecnology}
+                    </span>
                 ))}
             </div>
         </div>
