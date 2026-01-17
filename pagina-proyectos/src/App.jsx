@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ProjectCard from "./components/ProjectCard"
 function App() {
+  const BASE_URL = import.meta.env.BASE_URL;
 
   const [activeNavItem, setActiveNavItem] = useState("navPresentacion");
   const navItems = [
@@ -46,8 +47,8 @@ function App() {
         </div>
 
         <div id="contacto" className="flex gap-6 mt-auto mb-20">
-          <a href="https://github.com/aguslebed" target="_blank" rel="noopener noreferrer"><img src="linkedin.png" className="w-8" alt="" /></a>
-          <a href="https://github.com/aguslebed" target="_blank" rel="noopener noreferrer"><img src="github.png" className="w-8" alt="" /></a>
+          <a href="https://github.com/aguslebed" target="_blank" rel="noopener noreferrer"><img src={`${BASE_URL}linkedin.png`} className="w-8" alt="" /></a>
+          <a href="https://github.com/aguslebed" target="_blank" rel="noopener noreferrer"><img src={`${BASE_URL}github.png`} className="w-8" alt="" /></a>
         </div>
       </div>
 
