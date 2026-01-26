@@ -1,7 +1,29 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ProjectCard from "./components/ProjectCard"
 function App() {
   const BASE_URL = import.meta.env.BASE_URL;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      if (current) {
+        const navId = `nav${current.charAt(0).toUpperCase() + current.slice(1)}`;
+        setActiveNavItem(navId);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const [activeNavItem, setActiveNavItem] = useState("navPresentacion");
   const navItems = [
