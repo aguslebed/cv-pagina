@@ -74,7 +74,7 @@ function App() {
             image={"AlfabetoDactologico.png"}
           />
           <ProjectCard title={"Sudoku"}
-            description={""}
+            description={"Juego de Sudoku con 3 dificultades, con opcion de empezar un nuevo juego y de resolver el sudoku actual automaticamente. La logica del juego esta en el backend, donde se genera el tablero y se verifica cada juegada. Mientras que en el frontend se hacen las llamadas al backend y se muestran los resultados. "}
             link={"https://github.com/aguslebed/Sudoku"}
             tecnologies={["Python", "FastAPI", "JavaScript", "HTML", "Tailwindcss"]}
             image={"Sudoku.png"}
