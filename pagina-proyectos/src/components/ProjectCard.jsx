@@ -26,17 +26,17 @@ export default function ProjectCard({ title, description, image, link, tecnologi
 
 
     return (
-        <div className="group flex flex-col gap-4 bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 
+        <div className="group flex flex-col gap-4 bg-slate-800/40 backdrop-blur-sm rounded-xl p-4 sm:p-6 
         shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 hover:bg-slate-800/60 
         cursor-pointer transition-all duration-300 border border-slate-700/50 hover:border-cyan-500/50"
             onClick={() => window.open(link, '_blank')}>
-            <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
-            <div className="flex gap-6">
-                <div className="shrink-0">
+            <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                <div className="shrink-0 w-full md:w-auto flex justify-center md:block">
                     <img
                         src={`${BASE_URL}${image}`}
                         alt={title}
-                        className="w-64 h-48 rounded-lg object-cover shadow-md border border-slate-600/50"
+                        className="w-full md:w-64 h-48 rounded-lg object-cover shadow-md border border-slate-600/50"
                     />
                 </div>
                 <p className="text-gray-300 text-sm leading-relaxed flex-1">{description}</p>
@@ -45,7 +45,7 @@ export default function ProjectCard({ title, description, image, link, tecnologi
                 {tecnologies.map((tecnology) => (
                     <span
                         key={tecnology}
-                        className="bg-slate-700/60 px-3 py-1.5 text-xs text-gray-200 rounded-full 
+                        className="bg-slate-700/60 px-2 sm:px-3 py-1 sm:py-1.5 text-xs text-gray-200 rounded-full 
                         flex items-center gap-2 border border-slate-600/50 hover:border-cyan-500/50 
                         transition-colors"
                     >
