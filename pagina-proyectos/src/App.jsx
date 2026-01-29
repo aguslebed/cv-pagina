@@ -1,7 +1,29 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ProjectCard from "./components/ProjectCard"
 function App() {
   const BASE_URL = import.meta.env.BASE_URL;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      if (current) {
+        const navId = `nav${current.charAt(0).toUpperCase() + current.slice(1)}`;
+        setActiveNavItem(navId);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const [activeNavItem, setActiveNavItem] = useState("navPresentacion");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -89,17 +111,13 @@ function App() {
           </div>
         </div>
 
-        {/* Main Content */}
-        <div
-          id="main"
-          className="px-6 sm:px-8 lg:px-0 lg:col-start-5 lg:col-span-5 mt-20 lg:mt-20 flex flex-col gap-12 lg:gap-16 pb-20 relative z-10"
-        >
+        <div id="main" className="col-start-5 col-span-5 mt-20 flex flex-col gap-16 pb-20">
           <section id="presentacion" className="flex flex-col gap-6">
-            <h3 className="text-2xl sm:text-3xl font-bold text-cyan-400">Sobre mí</h3>
-            <p className="text-base lg:text-lg text-gray-300 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eveniet, voluptatum distinctio adipisci molestias, ipsa iure praesentium impedit vero dolorem cumque porro blanditiis ducimus voluptatibus pariatur magni commodi eligendi id?</p>
+            <h3 className="text-3xl font-bold text-cyan-400">Sobre mí</h3>
+            <p className="text-lg text-gray-300 leading-relaxed">Analista de sistemas orientado al desarrollo backend. Desarrollo proyectos personales aplicando principios de ingeniería de software, buenas prácticas, diseño de sistemas y resolución de problemas. Con conocimientos en frontend que complementan una visión integral del desarrollo.</p>
           </section>
           <section id="proyectos" className="flex flex-col gap-8">
-            <h3 className="text-2xl sm:text-3xl font-bold text-cyan-400">Proyectos Destacados</h3>
+            <h3 className="text-3xl font-bold text-cyan-400">Proyectos Destacados</h3>
             <ProjectCard title={"Chat + login"}
               description={"Aplicacion simple de chat en tiempo real, con funcion de login o iniciar sesion como invitado. La aplicacion tiene una seccion con chat global, donde todos los ususarios pueden enviar mensajes, y otra opcion para enviar mensajes de manera privada a una persona en particular. Esta ultima opcion solo esta disponible para los usuarios que hayan creado e iniciado sesion con una cuenta. Con este proyecto puse en practica conceptos de registro e inicio de sesion con autenticacion, uso de cookies, websockets y persistencia de datos."}
               link={"https://github.com/aguslebed/Chat---Login"}
@@ -113,7 +131,7 @@ function App() {
               image={"AlfabetoDactologico.png"}
             />
             <ProjectCard title={"Sudoku"}
-              description={""}
+              description={"Juego de Sudoku con 3 dificultades, con opcion de empezar un nuevo juego y de resolver el sudoku actual automaticamente. La logica del juego esta en el backend, donde se genera el tablero y se verifica cada juegada. Mientras que en el frontend se hacen las llamadas al backend y se muestran los resultados. "}
               link={"https://github.com/aguslebed/Sudoku"}
               tecnologies={["Python", "FastAPI", "JavaScript", "HTML", "Tailwindcss"]}
               image={"Sudoku.png"}
