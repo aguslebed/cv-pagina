@@ -31,7 +31,6 @@ function App() {
   const navItems = [
     { id: "navPresentacion", label: "Presentacion", href: "#presentacion" },
     { id: "navProyectos", label: "Proyectos", href: "#proyectos" },
-    { id: "navContacto", label: "Contacto", href: "#contacto" },
   ];
 
   const handleNavClick = (itemId) => {
@@ -57,7 +56,7 @@ function App() {
       </button>
 
       <div className="flex flex-col lg:grid lg:grid-cols-10 w-full">
-        {/* Sidebar */}
+
         <div
           id="sidebar"
           className={`
@@ -102,11 +101,14 @@ function App() {
           </div>
 
           <div id="contacto" className="flex gap-6 mt-auto lg:mb-20 mb-6">
-            <a href="https://www.linkedin.com/in/agustin-lebed" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+            <a href="https://www.linkedin.com/in/agustin-lebed/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
               <img src={`${BASE_URL}linkedin.png`} className="w-10 h-10 opacity-80 hover:opacity-100" alt="LinkedIn" />
             </a>
             <a href="https://github.com/aguslebed" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
               <img src={`${BASE_URL}github.png`} className="w-10 h-10 opacity-80 hover:opacity-100" alt="GitHub" />
+            </a>
+            <a href="Agustin-Lebed-Curriculum.pdf" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+              <img src={`${BASE_URL}resume.png`} className="w-10 h-10 opacity-80 hover:opacity-100" alt="PDF" />
             </a>
           </div>
         </div>
@@ -135,6 +137,12 @@ function App() {
               link={"https://github.com/aguslebed/Sudoku"}
               tecnologies={["Python", "FastAPI", "JavaScript", "HTML", "Tailwindcss"]}
               image={"Sudoku.png"}
+            />
+            <ProjectCard title={"SICaPSI"}
+              description={"Proyecto hecho durante el último año de carrera, que consistió en una plataforma para las capacitaciones brindadas por la Asociación de Profesionales de Seguridad de la Provincia de Buenos Aires. El desarrollo fue llevado a cabo por todo el curso, dividiéndose en grupos para tareas como comunicación con el cliente, análisis de requerimientos, diseño, documentación, frontend y backend. La aplicación gestiona distintos perfiles (Administrador, Directivo, Capacitador, Alumno) y destaca por su sistema de evaluaciones interactivas, donde los alumnos toman decisiones en escenarios de video ramificados."}
+              link={"https://github.com/aguslebed/SICaPSI"}
+              tecnologies={["Node.js", "JavaScript", "React", "Vite", "Express", "Socket.io", "MongoDB", "Tailwindcss"]}
+              image={"SICaPSI.jpg"}
             />
           </section>
         </div>
