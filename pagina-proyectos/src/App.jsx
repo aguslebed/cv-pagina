@@ -114,7 +114,7 @@ function App() {
         </div>
 
         <div id="main" className="col-start-5 col-span-5 mt-20 flex flex-col gap-16 pb-20">
-          <section id="presentacion" className="flex flex-col gap-6">
+          <section id="presentacion" className="flex flex-col gap-6 mx-2">
             <h3 className="text-3xl font-bold text-cyan-400">Sobre mí</h3>
             <p className="text-lg text-gray-300 leading-relaxed">Analista de sistemas orientado al desarrollo backend. Desarrollo proyectos personales aplicando principios de ingeniería de software, buenas prácticas, diseño de sistemas y resolución de problemas. Con conocimientos en frontend que complementan una visión integral del desarrollo.</p>
           </section>
@@ -133,7 +133,7 @@ function App() {
               image={"AlfabetoDactologico.png"}
             />
             <ProjectCard title={"Sudoku"}
-              description={"Juego de Sudoku con 3 dificultades, con opcion de empezar un nuevo juego y de resolver el sudoku actual automaticamente. La logica del juego esta en el backend, donde se genera el tablero y se verifica cada juegada. Mientras que en el frontend se hacen las llamadas al backend y se muestran los resultados. "}
+              description={"Juego de Sudoku con 4 dificultades, con opcion de empezar un nuevo juego y de resolver el sudoku actual automaticamente. La logica del juego esta en el backend, donde se genera el tablero y se verifica cada juegada. Mientras que en el frontend se hacen las llamadas al backend y se muestran los resultados. "}
               link={"https://github.com/aguslebed/Sudoku"}
               tecnologies={["Python", "FastAPI", "JavaScript", "HTML", "Tailwindcss"]}
               image={"Sudoku.png"}

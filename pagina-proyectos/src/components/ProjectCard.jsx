@@ -1,7 +1,12 @@
 
 
+import { useState } from "react";
+import ImageModal from "./ImageModal";
+
 export default function ProjectCard({ title, description, image, link, tecnologies }) {
     const BASE_URL = import.meta.env.BASE_URL;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const icons = {
         "Node.js": `${BASE_URL}tecnologies/Nodejs.svg`,
         "React": `${BASE_URL}tecnologies/React.svg`,
@@ -26,34 +31,54 @@ export default function ProjectCard({ title, description, image, link, tecnologi
 
 
     return (
-        <div className="group flex flex-col gap-4 bg-slate-800/40 backdrop-blur-sm rounded-xl p-4 sm:p-6 
+        <>
+            <div className="group flex flex-col bg-slate-800/40 backdrop-blur-sm rounded-xl overflow-hidden
         shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 hover:bg-slate-800/60 
         cursor-pointer transition-all duration-300 border border-slate-700/50 hover:border-cyan-500/50"
-            onClick={() => window.open(link, '_blank')}>
-            <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-                <div className="shrink-0 w-full md:w-auto flex justify-center md:block">
+                onClick={() => window.open(link, '_blank')}>
+
+
+                <div className="w-full relative overflow-hidden group/image h-64 sm:h-72 shrink-0">
                     <img
                         src={`${BASE_URL}${image}`}
                         alt={title}
-                        className="w-full md:w-64 h-48 rounded-lg object-cover shadow-md border border-slate-600/50"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover/image:scale-105"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setIsModalOpen(true);
+                        }}
                     />
+                    <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/10 transition-colors pointer-events-none" />
                 </div>
-                <p className="text-gray-300 text-sm leading-relaxed flex-1">{description}</p>
+
+
+                <div className="p-5 sm:p-6 flex flex-col gap-4">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
+
+                    <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
+
+                    <div className="flex gap-2 flex-wrap mt-2">
+                        {tecnologies.map((tecnology) => (
+                            <span
+                                key={tecnology}
+                                className="bg-slate-700/60 px-2 sm:px-3 py-1 sm:py-1.5 text-xs text-gray-200 rounded-full 
+                            flex items-center gap-2 border border-slate-600/50 hover:border-cyan-500/50 
+                            transition-colors"
+                            >
+                                <img src={icons[tecnology]} className="w-4 h-4" alt="" />
+                                {tecnology}
+                            </span>
+                        ))}
+                    </div>
+                </div>
             </div>
-            <div className="flex gap-2 flex-wrap">
-                {tecnologies.map((tecnology) => (
-                    <span
-                        key={tecnology}
-                        className="bg-slate-700/60 px-2 sm:px-3 py-1 sm:py-1.5 text-xs text-gray-200 rounded-full 
-                        flex items-center gap-2 border border-slate-600/50 hover:border-cyan-500/50 
-                        transition-colors"
-                    >
-                        <img src={icons[tecnology]} className="w-4 h-4" alt="" />
-                        {tecnology}
-                    </span>
-                ))}
-            </div>
-        </div>
+
+            <ImageModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                imageSrc={`${BASE_URL}${image}`}
+                altText={title}
+            />
+        </>
     )
 }
