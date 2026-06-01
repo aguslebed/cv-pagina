@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="w-full min-h-screen bg-linear-to-br from-black
-     via-gray-900 to-black text-white font-josefin
+     via-gray-900 to-black text-white font-goldman
      gird grid-cols-5">
 
 
@@ -60,9 +60,9 @@ function App() {
         <div className="contacto mx-2">
           <ul className="flex flex-col mt-4 gap-4">
             <li className="flex items-center gap-2">
-              <a href="mailto:agustinlebed@gmail.com" className="flex items-center gap-2">
+              <a href="mailto:agus.lebed@gmail.com" className="flex items-center gap-2">
                 <img src={`${BASE_URL}email.svg`} alt="Email" className="w-5 h-5" />
-                <span className="text-white/80">agustinlebed@gmail.com</span>
+                <span className="text-white/80">Email</span>
               </a>
             </li>
             <li>
@@ -88,9 +88,11 @@ function App() {
 
       </div>
 
-      <hr className="border-white/50 mx-auto w-5/6 " />
+      <hr className="border-white/10" />
 
-      <div className="tecnologias"></div>
+      <div className="tecnologias flex flex-col items-center p-6">
+        <h3 className="text-xl font-bold mb-4">Tecnologías</h3>
+      </div>
 
       <div className="proyectos"></div>
 

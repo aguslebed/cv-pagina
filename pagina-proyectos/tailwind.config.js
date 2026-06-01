@@ -6,7 +6,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                josefin: ['Josefin Sans', 'sans-serif']
+                josefin: ['Josefin Sans', 'sans-serif'],
+                goldman: ['Goldman', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif']
             }
         },
     },
