@@ -33,8 +33,8 @@ export default function ProjectCard({ title, description, image, link, tecnologi
     return (
         <>
             <div className="group flex flex-col bg-slate-800/40 backdrop-blur-sm rounded-xl overflow-hidden
-        shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20 hover:bg-slate-800/60 
-        cursor-pointer transition-all duration-300 border border-slate-700/50 hover:border-cyan-500/50"
+        shadow-lg hover:shadow-2xl hover:shadow-white/20 hover:bg-slate-800/60 
+        cursor-pointer transition-all duration-300 border border-slate-700/50 hover:border-white/50"
                 onClick={() => window.open(link, '_blank')}>
 
 
