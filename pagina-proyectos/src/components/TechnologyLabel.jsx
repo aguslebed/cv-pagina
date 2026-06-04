@@ -8,7 +8,7 @@ export default function TechnologyLabel({tecnology}){
         "Tailwind CSS": `${BASE_URL}tecnologies/Tailwindcss.svg`,
         "TypeScript": `${BASE_URL}tecnologies/Typescript.svg`,
         "Git": `${BASE_URL}tecnologies/Git.svg`,
-        "GitHub": `${BASE_URL}tecnologies/Github.svg`,
+        "GitHub": `${BASE_URL}tecnologies/github.png`,
         "Python": `${BASE_URL}tecnologies/Python.png`,
         "Postman": `${BASE_URL}tecnologies/Postman.svg`,
         "MongoDB": `${BASE_URL}tecnologies/Mongodb.png`,
@@ -20,7 +20,10 @@ export default function TechnologyLabel({tecnology}){
         "Numpy": `${BASE_URL}tecnologies/Numpy.png`,
         "JavaScript": `${BASE_URL}tecnologies/Javascript.png`,
         "HTML": `${BASE_URL}tecnologies/HTML5.png`,
-        "FastAPI": `${BASE_URL}tecnologies/Fastapi.png`
+        "FastAPI": `${BASE_URL}tecnologies/Fastapi.png`,
+        "Java": `${BASE_URL}tecnologies/Java.svg`,
+        "SQL": `${BASE_URL}tecnologies/SQL.svg`,
+        "Docker": `${BASE_URL}tecnologies/Docker.svg`
     }
 
 

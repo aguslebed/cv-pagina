@@ -123,7 +123,7 @@ function App() {
               <TechnologyLabel tecnology={"Vite"} />
               <TechnologyLabel tecnology={"Postman"} />
               <TechnologyLabel tecnology={"MongoDB"} />
-              <TechnologyLabel tecnology={"SQLServer"} />
+              <TechnologyLabel tecnology={"SQL"} />
               <TechnologyLabel tecnology={"Docker"} />
             </div>
           </div>
@@ -133,7 +133,7 @@ function App() {
       </div>
       <hr className="border-white/10 md:hidden" />
 
-      <div className="columna-derecha md:col-span-3">
+      <div className="columna-derecha md:col-span-3 min-w-0">
         <div className="proyectos flex flex-col items-center p-6">
           <h3 className="text-xl font-bold mb-4">Proyectos</h3>
         </div>
