@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import WhiteSvg from "./components/WhiteSvg"
 import TechnologyLabel from "./components/TechnologyLabel";
-import {CarouselProyectos} from "./components/CarousellProyectos";
+import { CarouselProyectos } from "./components/CarousellProyectos";
 
 function App() {
   const BASE_URL = import.meta.env.BASE_URL;
@@ -73,7 +73,7 @@ function App() {
               </li>
               <li>
                 <a href="https://github.com/aguslebed" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <img src={`${BASE_URL}github.png`} alt="GitHub" className="w-5 h-5" />
+                  <img src={`${BASE_URL}tecnologies/github.png`} alt="GitHub" className="w-5 h-5" />
                   <span className="text-white/80">GitHub</span>
                 </a>
               </li>
@@ -94,7 +94,7 @@ function App() {
           <h3 className="text-xl font-bold mb-4">Tecnologías</h3>
           <div className="languages flex flex-col gap-2 ">
             <h4>Lenguajes</h4>
-            <div className="labels grid grid-cols-3 gap-2 md:grid-cols-5">
+            <div className="labels flex flex-wrap gap-2 justify-center md:justify-start">
               <TechnologyLabel tecnology={"Python"} />
               <TechnologyLabel tecnology={"JavaScript"} />
               <TechnologyLabel tecnology={"Java"} />
@@ -103,21 +103,19 @@ function App() {
 
           <div className="languages flex flex-col gap-2 my-2 ">
             <h4>Frameworks/librerias</h4>
-            <div className="labels grid grid-cols-3 gap-2 md:grid-cols-5">
+            <div className="labels flex flex-wrap gap-2 justify-center md:justify-start">
               <TechnologyLabel tecnology={"Node.js"} />
               <TechnologyLabel tecnology={"React"} />
               <TechnologyLabel tecnology={"Tailwindcss"} />
               <TechnologyLabel tecnology={"FastAPI"} />
               <TechnologyLabel tecnology={"Numpy"} />
               <TechnologyLabel tecnology={"MediaPipe"} />
-
-
             </div>
           </div>
 
           <div className="languages flex flex-col gap-2 my-2">
             <h4>Herramientas</h4>
-            <div className="labels grid grid-cols-3 gap-2 md:grid-cols-5">
+            <div className="labels flex flex-wrap gap-2 justify-center md:justify-start">
               <TechnologyLabel tecnology={"Git"} />
               <TechnologyLabel tecnology={"GitHub"} />
               <TechnologyLabel tecnology={"Vite"} />
