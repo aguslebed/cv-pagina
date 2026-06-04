@@ -30,7 +30,6 @@ export default function ProjectCard({ title, description, image, link, tecnologi
         "Java": `${BASE_URL}tecnologies/Java.svg`,
         "SQL": `${BASE_URL}tecnologies/SQL.svg`,
         "Docker": `${BASE_URL}tecnologies/Docker.svg`,
-        "Postman": `${BASE_URL}tecnologies/Postman.svg`,
     }
 
     return (

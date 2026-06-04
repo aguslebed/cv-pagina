@@ -24,7 +24,6 @@ export default function TechnologyLabel({ tecnology }) {
         "Java": `${BASE_URL}tecnologies/Java.svg`,
         "SQL": `${BASE_URL}tecnologies/SQL.svg`,
         "Docker": `${BASE_URL}tecnologies/Docker.svg`,
-        "Postman": `${BASE_URL}tecnologies/Postman.svg`,
     }
 
 
