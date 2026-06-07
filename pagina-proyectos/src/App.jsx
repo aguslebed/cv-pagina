@@ -46,16 +46,34 @@ function App() {
 
       <div className="columna-izquierda md:col-span-2 border-r border-white/10 px-8">
         <div className="info-personal flex flex-col justify-center p-10 md:items-start">
-          <div className="foto flex justify-center">
+          
+          <div className="main flex flex-col items-center gap-6 md:items-start">
+          <div className="foto flex justify-center md:justify-start shrink-0">
             <img src="foto-perfil.jpeg"
-              className="rounded-full w-32 h-32 object-cover"
+              className="rounded-full w-48 h-48 object-cover"
               alt="" />
           </div>
 
-          <div className="info flex flex-col items-center mt-4 gap-4 w-full md:items-start">
+          <div className="info flex flex-col items-center mt-4 gap-4 w-full md:w-full md:items-start">
             <h1 className="text-3xl font-bold">Agustin Lebed</h1>
-            <span className="text-white/80">Analista de sistemas - Desarrollador de software</span>
+            <span className="text-white/80 text-center md:text-left block">
+              Analista de sistemas
+              <br />
+              Desarrollador de software
+            </span>
           </div>
+        </div>
+
+
+          <div className="tecnologias flex flex-col items-center my-4 md:items-start ">
+            <h3 className="text-xl font-bold mb-4">Sobre mi</h3>
+            <p className="text-justify text-sm text-white/80">
+              Soy Analista de Sistemas, tengo conocimientos en soporte técnico IT, redes y desarrollo de software, trabajando tanto en frontend como en backend, aunque es en este último donde más me gusta desarrollarme.
+
+              A lo largo de distintos proyectos personales y académicos fui adquiriendo experiencia en análisis de requerimientos, diseño de soluciones y desarrollo de aplicaciones, siempre buscando aplicar buenas prácticas y crear software que sea funcional, mantenible y fácil de mejorar con el tiempo.
+            </p>
+          </div>
+
 
           <div className="contacto">
             <ul className="flex flex-col mt-4 gap-8 items-center md:grid md:grid-cols-2 md:justify-center">

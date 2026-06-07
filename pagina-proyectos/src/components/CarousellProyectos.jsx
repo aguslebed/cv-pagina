@@ -135,7 +135,7 @@ export function CarouselProyectos() {
       </button>
 
       {/* Pagination Indicators */}
-      <div className="flex justify-center items-center gap-2 mt-6">
+      <div className="flex justify-center items-center gap-2 my-2 md:my-2 lg:my-3 ">
         {projects.map((_, index) => (
           <button
             key={index}
