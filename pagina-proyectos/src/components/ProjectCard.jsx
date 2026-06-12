@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ImageModal from "./ImageModal";
 
-export default function ProjectCard({ title, description, image, link, tecnologies }) {
+export default function ProjectCard({ title, description, image, link, tecnologies, onModalOpen, onModalClose }) {
     const BASE_URL = import.meta.env.BASE_URL;
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -48,6 +48,7 @@ export default function ProjectCard({ title, description, image, link, tecnologi
                         onClick={(e) => {
                             e.stopPropagation();
                             setIsModalOpen(true);
+                            onModalOpen?.();
                         }}
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/10 transition-colors pointer-events-none" />
@@ -77,7 +78,10 @@ export default function ProjectCard({ title, description, image, link, tecnologi
 
             <ImageModal
                 isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
+                onClose={() => {
+                    setIsModalOpen(false);
+                    onModalClose?.();
+                }}
                 imageSrc={`${BASE_URL}${image}`}
                 altText={title}
             />

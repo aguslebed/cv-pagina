@@ -35,6 +35,7 @@ const projects = [
 export function CarouselProyectos() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
@@ -50,12 +51,12 @@ export function CarouselProyectos() {
 
   // Auto-play effect
   useEffect(() => {
-    if (isHovered) return;
+    if (isHovered || isPaused) return;
     const interval = setInterval(() => {
       handleNext();
     }, 6000);
     return () => clearInterval(interval);
-  }, [isHovered, currentIndex]);
+  }, [isHovered, isPaused, currentIndex]);
 
   // Touch Swipe Handlers
   const onTouchStart = (e) => {
@@ -99,7 +100,11 @@ export function CarouselProyectos() {
         >
           {projects.map((project, index) => (
             <div key={index} className="w-full shrink-0 px-1 sm:px-2">
-              <ProjectCard {...project} />
+              <ProjectCard
+                {...project}
+                onModalOpen={() => setIsPaused(true)}
+                onModalClose={() => setIsPaused(false)}
+              />
             </div>
           ))}
         </div>
