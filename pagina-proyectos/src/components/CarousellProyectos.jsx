@@ -29,6 +29,13 @@ const projects = [
     link: "https://github.com/aguslebed/SICaPSI",
     tecnologies: ["Node.js", "JavaScript", "React", "Vite", "Express", "Socket.io", "MongoDB", "Tailwindcss"],
     image: "SICaPSI.jpg"
+  },
+  {
+    title: "GPU Tracker",
+    description: "Este proyecto es una plataforma web integral diseñada para automatizar la extracción, el seguimiento y la visualización de los precios de las tarjetas gráficas en las principales tiendas de hardware de Argentina. Mediante un sistema de scraping automatizado, la herramienta recolecta diariamente información sobre el valor y el stock de los productos, para luego organizarlos en un catálogo interactivo agrupado por chipset. A través de su interfaz, los usuarios pueden buscar modelos específicos, analizar gráficos detallados con la evolución histórica de los precios para entender las tendencias del mercado y comparar el costo de un mismo componente en múltiples tiendas simultáneamente, todo respaldado por una arquitectura tecnológica robusta basada en Python, Django, React y MongoDB bajo un entorno gestionado completamente por Docker.",
+    link: "https://github.com/aguslebed/scraping-gpus",
+    tecnologies: ["Python", "Django", "React", "MongoDB", "Docker","Playwright","BeautifulSoup", "Vite"],
+    image: "ScrapingGPU.png"
   }
 ];
 

@@ -76,6 +76,7 @@ function App() {
 
 
           <div className="contacto">
+            <h3 className="text-xl font-bold mb-4">Contacto</h3>
             <ul className="flex flex-col mt-4 gap-8 items-center md:grid md:grid-cols-2 md:justify-center">
               <li className="flex items-center gap-2">
                 <a href="mailto:agus.lebed@gmail.com" className="flex items-center gap-2">

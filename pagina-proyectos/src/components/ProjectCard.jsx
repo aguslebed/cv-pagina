@@ -30,6 +30,9 @@ export default function ProjectCard({ title, description, image, link, tecnologi
         "Java": `${BASE_URL}tecnologies/Java.svg`,
         "SQL": `${BASE_URL}tecnologies/SQL.svg`,
         "Docker": `${BASE_URL}tecnologies/Docker.svg`,
+        "Django": `${BASE_URL}tecnologies/Django.svg`,
+        "Playwright": `${BASE_URL}tecnologies/PlayWright.svg`,
+        "BeautifulSoup": `${BASE_URL}tecnologies/BeautifulSoup.jpg`,
     }
 
     return (
